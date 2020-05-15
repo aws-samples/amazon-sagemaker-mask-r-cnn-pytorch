@@ -20,10 +20,6 @@ model_path = os.path.join(prefix, 'model')#mask_rcnn_model_saved
 
 class ScoringService(object):
     model = None                # Where we keep the model when it's loaded
-<<<<<<< HEAD
-=======
-
->>>>>>> a649e689075af9801073f309fc34acb3ca6e15cd
 
     @classmethod
     def get_model(cls):
