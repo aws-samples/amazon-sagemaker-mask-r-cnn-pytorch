@@ -36,12 +36,6 @@ class ScoringService(object):
 
     @classmethod
     def predict(cls, input):
-        """For the input, do the predictions and return them.
-
-        Args:
-            input (a pandas dataframe): The data on which to do the predictions. There will be
-                one prediction per row in the dataframe"""
-
         clf = cls.get_model()
 
         clf.eval()
@@ -69,19 +63,10 @@ def transformation():
 
     print('Invoked with shape: {}'.format(img.shape))
 
-<<<<<<< HEAD
-=======
-#    # Do the prediction
-#    img = np.array(img)
-#    print('  now type {}, shape: {}'.format(type(img), img.shape))
-#    img = img.astype(np.uint8)
-#    print('  now type {}, shape: {}'.format(type(img), img.shape))
->>>>>>> a649e689075af9801073f309fc34acb3ca6e15cd
 
     trans = torchvision.transforms.ToTensor()
     t1 = trans(img)
     print('  after tv.ToTensor, type {}, shape: {}'.format(type(img), t1.shape))
-<<<<<<< HEAD
 
     predictions = ScoringService.predict(t1)
     mask_response = predictions[0]['masks'].tolist()
@@ -91,7 +76,6 @@ def transformation():
 
     return flask.Response(response=result, status=200, mimetype='text/csv')
 
-=======
 
     predictions = ScoringService.predict(t1)
     mask_response = predictions[0]['masks'].tolist()
@@ -101,7 +85,7 @@ def transformation():
 
     return flask.Response(response=result, status=200, mimetype='text/csv')
 
->>>>>>> a649e689075af9801073f309fc34acb3ca6e15cd
+
 def transformation_as_json():
     if True: #flask.request.content_type == 'image/png' or flask.request.content_type == 'image/jpeg':
         img = json.loads(flask.request.data.decode('utf-8'))
