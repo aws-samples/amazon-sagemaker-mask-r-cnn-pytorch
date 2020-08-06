@@ -27,7 +27,7 @@ RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py && \
         
 RUN ln -s /usr/bin/python3 /usr/bin/python & \
     ln -s /usr/bin/pip3 /usr/bin/pip
-RUN pip install torch==1.4 torchvision==0.5.0  fastai thinc  Pillow pycocotools
+RUN pip install scikit-learn==0.22 torch==1.4 torchvision==0.5.0  fastai thinc  Pillow pycocotools
 # Set some environment variables. PYTHONUNBUFFERED keeps Python from buffering our standard
 # output stream, which means that logs can be delivered to the user quickly. PYTHONDONTWRITEBYTECODE
 # keeps Python from writing the .pyc files which are unnecessary in this case. We also update
